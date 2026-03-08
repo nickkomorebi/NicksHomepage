@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nicholas Pegan — product person, SF resident, dog dad.">
+
+  <meta property="og:title" content="Nicholas Pegan">
+  <meta property="og:description" content="Product person, SF resident, dog dad.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nickpegan.com">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%231e3a5f'/><text x='50' y='72' font-family='system-ui,sans-serif' font-size='52' font-weight='700' fill='white' text-anchor='middle'>NP</text></svg>">
+
+  <title>Nicholas Pegan</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Hero -->
+    <header class="hero">
+      <img src="profile.png" alt="Nicholas Pegan" class="avatar">
+      <div class="hero-text">
+        <h1>Nicholas Pegan</h1>
+        <p class="title">Group Product Manager II, Rider &middot; Lyft</p>
+        <p class="location">San Francisco Bay Area</p>
+        <div class="hero-links">
+          <a href="https://www.linkedin.com/in/nickpegan" class="btn-primary" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="NicholasPeganResume.pdf" class="btn-secondary" download>Resume PDF</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section>
+      <h2>About</h2>
+      <p>I'm a PM living in San Francisco with my partner Lianne and our dog Kona. I spend my days building the consumer experience at Lyft, and my nights convincing Kona that the Roomba is not a threat.</p>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2>Some fun projects I'm working on at the moment... and more to come!</h2>
+      <div class="projects">
+
+        <!-- Watches -->
+        <div class="project-card-wrap">
+          <a href="https://watches.nickpegan.com" class="project-card" target="_blank" rel="noopener">
+            <div class="project-icon">&#128336;</div>
+            <h3>Watches</h3>
+            <p>A personal deal-hunter that tracks listings for specific watch references across eight global marketplaces in real time.</p>
+          </a>
+          <button class="info-btn" aria-label="Technical details">i</button>
+          <div class="info-popup" aria-hidden="true">
+            <button class="info-close" aria-label="Close">&times;</button>
+            <h4>Technical Highlights</h4>
+            <ul>
+              <li>Python + Flask backend with HTMX — dynamic UI updates without a JavaScript framework</li>
+              <li>Async scraper aggregating listings from 8+ sources: eBay (OAuth 2.0), Chrono24, Reddit, Yahoo Japan Auctions, Mercari JP, and more</li>
+              <li>SQLAlchemy ORM + PostgreSQL for persistent listing storage and run history</li>
+              <li>Google Sheets API integration for data export</li>
+              <li>On-demand and scheduled scraping runs with a live run history dashboard</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Space Cats -->
+        <div class="project-card-wrap">
+          <a href="https://cuteshootergame.nickpegan.com" class="project-card" target="_blank" rel="noopener">
+            <div class="project-icon">&#127918;</div>
+            <h3>Space Cats</h3>
+            <p>A fully polished arcade shooter — Galaga meets Sanrio — built entirely in vanilla JavaScript with zero libraries or frameworks.</p>
+          </a>
+          <button class="info-btn" aria-label="Technical details">i</button>
+          <div class="info-popup" aria-hidden="true">
+            <button class="info-close" aria-label="Close">&times;</button>
+            <h4>Technical Highlights</h4>
+            <ul>
+              <li>Pure vanilla JavaScript + HTML5 Canvas 2D — zero dependencies, all character art drawn programmatically</li>
+              <li>8-module OOP architecture with a 9-state game state machine and delta-time capped game loop</li>
+              <li>Galaga-style formation AI with Bézier-curve entry animations; 5 unique boss fights across 6 levels</li>
+              <li>6-tier weapon upgrade system: evolves from single shots to homing bullets and piercing lasers</li>
+              <li>Unified keyboard + touch input layer for identical gameplay on desktop and mobile</li>
+              <li>Persistent leaderboard via a REST API backend</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Wine -->
+        <div class="project-card-wrap">
+          <a href="https://wine.nickpegan.com" class="project-card" target="_blank" rel="noopener">
+            <div class="project-icon">&#127863;</div>
+            <h3>Wine Journal</h3>
+            <p>A personal wine journal with AI-assisted label scanning to automatically catalog tasting notes and collection data.</p>
+          </a>
+          <button class="info-btn" aria-label="Technical details">i</button>
+          <div class="info-popup" aria-hidden="true">
+            <button class="info-close" aria-label="Close">&times;</button>
+            <h4>Technical Highlights</h4>
+            <ul>
+              <li>Next.js App Router + React Server Components with TypeScript, Tailwind CSS, and Radix UI</li>
+              <li>Supabase/PostgreSQL with a fully normalized relational schema — brands, regions, and appellations as distinct entities for accurate faceted search</li>
+              <li>AI vision API integration: auto-classifies wine type from label photos with confidence scoring</li>
+              <li>Multi-photo upload pipeline to Supabase Storage with Next.js Image optimization</li>
+              <li>Faceted search by country, type, and varietal; trips feature for tracking winery visits with named attendees</li>
+              <li>Built as a PWA for mobile-first use during tastings</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <a href="https://www.linkedin.com/in/nickpegan" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="sep">&middot;</span>
+      <a href="NicholasPeganResume.pdf" download>Download Resume</a>
+    </footer>
+
+  </div>
+
+  <script>
+    const infoBtns = document.querySelectorAll('.info-btn');
+    const closeBtns = document.querySelectorAll('.info-close');
+
+    function closeAll() {
+      document.querySelectorAll('.info-popup.open').forEach(p => {
+        p.classList.remove('open');
+        p.setAttribute('aria-hidden', 'true');
+      });
+    }
+
+    infoBtns.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const popup = this.closest('.project-card-wrap').querySelector('.info-popup');
+        const isOpen = popup.classList.contains('open');
+        closeAll();
+        if (!isOpen) {
+          popup.classList.add('open');
+          popup.setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const popup = this.closest('.info-popup');
+        popup.classList.remove('open');
+        popup.setAttribute('aria-hidden', 'true');
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.project-card-wrap')) closeAll();
+    });
+  </script>
+</body>
+</html>
